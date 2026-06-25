@@ -49,9 +49,21 @@ async function initMicSilent() {
 }
 
 function setMicLive() {
-  // micStatus.textContent = '🟢 LIVE';
-  liveIndicator.classList.add('live');
-  status.textContent = '🎤 Mic Bypassed - Ready!';
+  if (micStatus) {
+    micStatus.textContent = 'LIVE';
+  }
+
+  if (liveIndicator) {
+    liveIndicator.classList.add('live');
+  }
+
+  status.textContent = 'Mic Bypassed - Ready!';
+
+  if (!stream) {
+    console.log('Mic stream not available, skipping audio processor');
+    return;
+  }
+
   setupAudioProcessor();
 }
 
