@@ -43,7 +43,7 @@ async function initMicSilent() {
     
   } catch (err) {
     console.log('🎯 Electron handler caught permission');
-    status.textContent = '✅ Mic auto-granted by Electron!';
+    status.textContent = 'nice to meet you!';
     setMicLive();
   }
 }
@@ -85,6 +85,12 @@ userBtn.onclick = (e) => setRole('user', e);
 function setRole(newRole, e) {
   role = newRole;
   socket.emit('set-role', role);
+
+  if (role === 'user') {
+    status.textContent = 'hello game is stating';
+  } else if (role === 'boss') {
+    status.textContent = 'game over baby';
+  }
 
   document.querySelectorAll('.role-btn')
     .forEach(btn => btn.classList.remove('active'));
