@@ -1,6 +1,10 @@
 const appConfig = window.APP_CONFIG || {};
-const socket = io(appConfig.socketUrl || window.location.origin, {
-  path: appConfig.socketPath || "/cctvvo/socket.io"
+const API_URL = appConfig.apiUrl || appConfig.socketUrl || window.location.origin;
+const SOCKET_URL = appConfig.socketUrl || API_URL;
+const SOCKET_PATH = appConfig.socketPath || "/socket.io";
+
+const socket = io(SOCKET_URL, {
+  path: SOCKET_PATH
 });
 
 // DOM Elements
