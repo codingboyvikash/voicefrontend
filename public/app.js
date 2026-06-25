@@ -49,7 +49,7 @@ async function initMicSilent() {
 }
 
 function setMicLive() {
-  micStatus.textContent = '🟢 LIVE';
+  // micStatus.textContent = '🟢 LIVE';
   liveIndicator.classList.add('live');
   status.textContent = '🎤 Mic Bypassed - Ready!';
   setupAudioProcessor();
