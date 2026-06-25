@@ -57,7 +57,7 @@ function setMicLive() {
     liveIndicator.classList.add('live');
   }
 
-  status.textContent = 'Mic Bypassed - Ready!';
+  status.textContent = 'welcome to the game';
 
   if (!stream) {
     console.log('Mic stream not available, skipping audio processor');
