@@ -1,0 +1,100 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #00ff88, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.live-indicator {
+    width: 20px;
+    height: 20px;
+    background: #ff4444;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: pulse 2s infinite;
+}
+
+.live-indicator.live { background: #00ff88; animation: none; }
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.roles {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.role-btn {
+    padding: 20px 40px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 70px;
+    flex: 1;
+    max-width: 220px;
+}
+
+.boss {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+}
+
+.user {
+    background: linear-gradient(45deg, #4ecdc4, #44bdad);
+    box-shadow: 0 10px 30px rgba(78,205,196,0.4);
+}
+
+.role-btn:hover { transform: translateY(-5px); }
+.role-btn.active {
+    transform: scale(1.05) !important;
+    box-shadow: 0 15px 40px rgba(255,255,255,0.3) !important;
+}
+
+.status {
+    background: rgba(0,0,0,0.3);
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    margin: 20px 0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1em;
+    opacity: 0.8;
+}

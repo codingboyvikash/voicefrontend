@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Silent Mic Chat</title>
+   <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎤 <span id="micStatus">OFF</span> Live Chat</h1>
+            <div class="live-indicator" id="liveIndicator"></div>
+        </div>
+        
+        <div class="roles">
+            <button id="bossBtn" class="role-btn boss">👑 BOSS MODE</button>
+            <button id="userBtn" class="role-btn user">👤 USER MODE</button>
+        </div>
+        
+        <div class="status" id="status">Connecting...</div>
+        
+        <div class="controls">
+            <span id="userCount">0 users</span>
+            <span id="bossStatus">No boss</span>
+        </div>
+    </div>
+
+    <!-- FIXED SOCKET.IO & SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+  <script src="/config.js"></script>
+  <script src="/public/app.js"></script>
+</body>
+</html>
